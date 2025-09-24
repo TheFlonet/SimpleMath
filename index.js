@@ -64,7 +64,7 @@ function generate() {
 
     html += `
         <div class="controls">
-          <button id="showBtn">Mostra la sol</button>
+          <button id="showBtn">Mostra la soluzione</button>
           <button id="newBtn">Nuovo esercizio</button>
         </div>
         <div id="sol" aria-live="polite"></div>
