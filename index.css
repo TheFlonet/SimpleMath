@@ -1,0 +1,141 @@
+:root {
+    --accent: #4CAF50;
+    --accent-dark: #45a049;
+    --bg: #f0f4f8;
+    --card-bg: white;
+    --max-width: 720px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: #222;
+}
+
+/* centrate la UI */
+.page {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.card {
+    width: 100%;
+    max-width: var(--max-width);
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(10, 20, 30, 0.08);
+    padding: 28px;
+    text-align: center;
+}
+
+#esercizio {
+    font-size: 1.6rem;
+    margin: 6px 0 18px;
+    font-weight: 600;
+}
+
+.controls {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button {
+    appearance: none;
+    border: 0;
+    background: var(--accent);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    transition: transform .12s ease, background .12s ease, opacity .12s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: var(--accent-dark);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* area che mostra numeri o forme */
+.items {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    align-items: flex-end;
+    /* le forme sono allineate in basso */
+    margin: 12px 0 6px;
+    min-height: 72px;
+    padding: 6px;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 56px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    user-select: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+}
+
+.item.number {
+    height: 56px;
+    background: var(--accent);
+    font-size: 1.2rem;
+}
+
+.item.shape {
+    width: 56px;
+    background: var(--accent);
+    /* height impostata inline in px, per essere proporzionale al numero */
+    display: block;
+    border-radius: 8px 8px 4px 4px;
+    box-sizing: border-box;
+}
+
+#soluzione {
+    margin-top: 12px;
+    font-size: 1.05rem;
+    color: #0b3;
+    display: none;
+}
+
+.meta {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width:420px) {
+    .item {
+        width: 44px;
+    }
+
+    .item.number {
+        height: 44px;
+        font-size: 1rem;
+    }
+}
